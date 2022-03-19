@@ -25,10 +25,37 @@ namespace HanoiTowers
                 kuleler[diskler, 0] = (disk * 2) - 1; 
             }
 
-            
+            //printTowers();
+            //solveTowers
+            //scancllose
+            //syso(hareket sayısı)
 
         }
 
+        //burada disk hareketini tanımlıyorum
+        public static void diskHareketi(int eski, int yeni)
+        {
+            adımSayısı++;
+            int disk = 0;
+            while (disk < diskler && kuleler[disk,eski] == 0)
+            {
+                disk++;
+            }
+
+            int temp = kuleler[disk, eski];
+            kuleler[disk, eski] = 0;
+
+
+            int yeniDisk = 0;
+            while (yeniDisk < diskler && kuleler [disk,yeni] == 0 )
+            {
+                yeniDisk++;
+            }
+
+            kuleler[--yeniDisk, yeni] = temp;
+            
+
+        }
 
     }
 }
