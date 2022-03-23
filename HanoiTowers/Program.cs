@@ -46,7 +46,7 @@ namespace HanoiTowers
                 kuleleriÇözümle(diskNo - 1, eskiSutun, ortaSutun);
                 //Diskler hareket ettiriliyor
                 diskHareketi(eskiSutun, yeniSutun);
-                //Disk sayısı bir azaltılarak gönderilen parametrelere göre orta sütundan yeni sütuna diskler hareket ediyor
+                //Disk sayısı bir azaltılarak gönderilen parametrelere göre orta sütundan yeni sütuna diskler hareket ediyor.
                 kuleleriÇözümle(diskNo - 1, ortaSutun, yeniSutun);
             }
         }
