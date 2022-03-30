@@ -30,6 +30,5 @@ namespace Personnel_Information
             Console.WriteLine("ID:" + registrationNumber);
             Console.WriteLine("Maaş:" + salary);
         }
-    }
-   
+    }  
 }

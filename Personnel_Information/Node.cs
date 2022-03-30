@@ -14,7 +14,5 @@ namespace Personnel_Information
             this.person = person;
             next = null;
         }
-    }
-
-    
+    }    
 }

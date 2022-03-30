@@ -12,7 +12,7 @@ namespace Personnel_Information
             Personel person3 = new Personel("Selçuk", "BAYRAKTAR", 8000);
             Personel person4 = new Personel("Neşet", "ERTAŞ", 3000);
             Personel person5 = new Personel("Şatlık", "MURADOV", 3000);
-
+            
             LinkedList list = new LinkedList();
 
             list.addNode(person1);
@@ -25,8 +25,7 @@ namespace Personnel_Information
             list.listElements();
             Console.WriteLine("--------------------");
             list.find(2);
-            
-            
+            //list.add();
         }
     }
 }
