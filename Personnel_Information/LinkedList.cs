@@ -68,7 +68,7 @@ namespace Personnel_Information
                 temp = temp.next;
             }
         }
-        // add methodu düzenlenecek
+        // add methodu çalışmıyor düzenlenecek
         public void add(Personel personel)
         {
             
