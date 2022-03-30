@@ -60,6 +60,8 @@ namespace week3_arrays
             Console.WriteLine("İki boyutlu dizinin ters çevrilmiş hali");
             tersdenYaz(array7);
             Console.WriteLine();
+
+            sıralama();
         }
        
         static void tersdenYaz(int[,] dizi)
@@ -72,6 +74,71 @@ namespace week3_arrays
                 }
                 Console.WriteLine();
             }
+        }
+
+        public static void sıralama()
+        {
+            Console.WriteLine("Bir sayı giriniz");
+            int sayi = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Girilen sayi : " + sayi);
+
+            Random random = new Random();
+            int[] arr = new int[sayi];
+            for (int i = 0; i < sayi; i++)
+            {
+                arr[i] = random.Next(100,200);
+                Console.WriteLine(arr[i]);
+            }
+
+            Console.WriteLine("----------Sıralandıktan sonra----------");
+            int min = arr[0];
+            int temp;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[j] < arr[i])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+                Console.WriteLine(arr[i]);
+            }
+            //int secim = 0;
+
+            //int secim = Convert.ToInt32(Console.ReadLine());
+            //while (secim != 3)
+            //{
+            //    Console.WriteLine("En küçük eleman için 1 e indise göre silmek için 2 ye basın");
+            //    switch (secim)
+            //    {
+            //        case 1:
+
+
+            //        case 2:
+
+            //    }
+            //    break;
+            //}
+            int index = 3;
+            int count = 0;
+            int[] array = new int[arr.Length - 1];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i!= index -1)
+                {
+                    array[count] = arr[i];
+                    count++;
+                }
+            }
+            Console.WriteLine("");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+
         }
     } 
 }

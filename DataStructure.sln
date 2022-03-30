@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HanoiTowers", "HanoiTowers\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "week3_arrays", "week3\week3_arrays.csproj", "{5B702E90-7249-499C-82A7-43A0846A3656}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personnel_Information", "Personnel_Information\Personnel_Information.csproj", "{73946968-E3E7-442F-B9AC-8D9ED1621C51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personnel_Information", "Personnel_Information\Personnel_Information.csproj", "{73946968-E3E7-442F-B9AC-8D9ED1621C51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deneme", "deneme\deneme.csproj", "{4A2C69EC-9B59-481E-A005-31C0FBCDCAB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{73946968-E3E7-442F-B9AC-8D9ED1621C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73946968-E3E7-442F-B9AC-8D9ED1621C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73946968-E3E7-442F-B9AC-8D9ED1621C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A2C69EC-9B59-481E-A005-31C0FBCDCAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A2C69EC-9B59-481E-A005-31C0FBCDCAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A2C69EC-9B59-481E-A005-31C0FBCDCAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A2C69EC-9B59-481E-A005-31C0FBCDCAB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
