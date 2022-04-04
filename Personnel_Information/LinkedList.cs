@@ -51,7 +51,7 @@ namespace Personnel_Information
             }
         }
 
-        public void find(string name, string surname)
+        public void findName(string name, string surname)
         {
             Node temp = head;
             if (temp == null)
@@ -60,7 +60,7 @@ namespace Personnel_Information
             }
             while (temp != null)
             {
-                if (temp.person.name.Equals(name) && temp.person.sureName.Equals(surname))                  
+                if (temp.person.name.Equals(name) && temp.person.surename.Equals(surname))                  
                 {
                     Console.WriteLine("Personel bulundu");
                     temp.person.printPerson();
@@ -107,7 +107,7 @@ namespace Personnel_Information
             }
             temp.next = pWillBeAdded;
         }
-        public void find(int id)
+        public void findId(int id)
         {
             Node temp = head;
             if (temp == null)
@@ -124,7 +124,56 @@ namespace Personnel_Information
                 temp = temp.next;
             }
         }
-
+        public void removeId(int id)
+        {
+            if (id == 1)
+            {
+                head = head.next;
+            }
+            
+            else
+            {
+                Node current = head;
+                for (int i = 0; i < id ; i++)
+                {
+                    current = current.next;
+                    id--;
+                }
+                
+                current.next = current.next.next;
+                
+            }
+        }
+        public void removeName(string name)
+        {
+            if (name.Equals(name))
+            {
+                head = head.next;
+            }
+            else
+            {
+                Node current = head;
+                
+                //for (int i = 0; i < id - 1; i++)
+                //{
+                //    current = current.next;
+                //    id--;
+                //}
+                //current.next = current.next.next;
+            }
+        }
+        //public void maasGuncelle(int id)
+        //{
+        //    Node temp = head;
+        //    int newSalary;
+        //    for (int i = 0; i < id; i++)
+        //    {
+        //        if (i==id)
+        //        {
+        //            temp.person.salary = newSalary;
+        //        }
+        //    }
+        //}
         public void arrangement()
         {
             LinkedList linkedList = new LinkedList();

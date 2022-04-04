@@ -8,10 +8,10 @@ namespace Personnel_Information
     {
         private static int tmpId;
 
-        public Personel(string name, string sureName , int salary)
+        public Personel(string name, string surename , int salary)
         {
             this.name = name;
-            this.sureName = sureName;
+            this.surename = surename;
             this.registrationNumber = registrationNumber;
             this.salary = salary;
             tmpId++;
@@ -19,16 +19,17 @@ namespace Personnel_Information
         }
 
         public string name { get; set; }
-        public string sureName { get; set; }
+        public string surename { get; set; }
         public int registrationNumber { get; set; }
         public int salary { get; set; }
 
         public void printPerson()
         {
             Console.WriteLine("İsim:" + name);
-            Console.WriteLine("Soyisim:" + sureName);
+            Console.WriteLine("Soyisim:" + surename);
             Console.WriteLine("ID:" + registrationNumber);
             Console.WriteLine("Maaş:" + salary);
+            Console.WriteLine("--------------");
         }
     }  
 }
