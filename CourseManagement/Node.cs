@@ -4,26 +4,26 @@ using System.Text;
 
 namespace CourseManagement
 {
-    //           ÇİFT YÖNLÜ(DOUBLY) LİSTELER İÇİN NODE
-    class NodeL<T>
+    //           TEK YÖNLÜ(SİNGLY) LİSTELER İÇİN NODE
+    class NodeS<T>
     {
-        public NodeL<T> next;
+        public NodeS<T> next;
         public T _data;
 
-        public NodeL(T data)
+        public NodeS(T data)
         {
             _data = data;
             next = null;
         }
     }
-    //           TEK YÖNLÜ(SİNGLY) LİSTELER İÇİN NODE
-    class NodeC<T>
+    //           ÇİFT YÖNLÜ(DOUBLY) LİSTELER İÇİN NODE
+    class NodeD<T>
     {
-        public NodeC<T> next;
-        public NodeC<T> prev;
+        public NodeD<T> next;
+        public NodeD<T> prev;
         public T _data;
 
-        public NodeC(T data)
+        public NodeD(T data)
         {
             _data = data;
             next = null;

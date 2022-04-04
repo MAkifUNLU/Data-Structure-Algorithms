@@ -6,13 +6,13 @@ namespace CourseManagement.LinkedList
 {
     class OneWayLineerLinkedList
     {
-        public NodeL<Course> head;
-        public NodeL<Course> tail;
+        public NodeS<Course> head;
+        public NodeS<Course> tail;
         public int count = 0;
 
-        public void addFront(NodeL<Course> node)
+        public void addFront(NodeS<Course> node)
         {
-            NodeL<Course> temp = head;
+            NodeS<Course> temp = head;
             head = node;
             head.next = temp;
 
@@ -25,7 +25,7 @@ namespace CourseManagement.LinkedList
  
         public void addFront(Course course)
         {
-            addFront(new NodeL<Course>(course));
+            addFront(new NodeS<Course>(course));
         }
 
         //public void insert(Course node, int x)
@@ -57,7 +57,7 @@ namespace CourseManagement.LinkedList
         //{
         //    insert(new Node<Course>(course), x);
         //}
-        public void addBack(NodeL<Course> node)
+        public void addBack(NodeS<Course> node)
         {
             if (count == 0)
             {
@@ -72,7 +72,7 @@ namespace CourseManagement.LinkedList
         }
         public void addBack(Course course)
         {
-            addBack(new NodeL<Course>(course));
+            addBack(new NodeS<Course>(course));
         }
 
         public void removeFirst()
@@ -103,7 +103,7 @@ namespace CourseManagement.LinkedList
                 }
                 else
                 {
-                    NodeL<Course> current = head;
+                    NodeS<Course> current = head;
                     while (current.next != tail)
                     {
                         current = current.next;
@@ -116,7 +116,7 @@ namespace CourseManagement.LinkedList
         }
         public void removeById(int index)
         {
-            NodeL<Course> temp = head;
+            NodeS<Course> temp = head;
             int count = 0;
             if (temp._data.code == index)
             {
@@ -218,7 +218,7 @@ namespace CourseManagement.LinkedList
         }
         public void listElements()
         {
-            NodeL<Course> temp = head;
+            NodeS<Course> temp = head;
             if (head == null)
             {
                 Console.WriteLine("Listenizde eleman yoktur.");
@@ -232,7 +232,7 @@ namespace CourseManagement.LinkedList
         }
         public void findCourseById(int index)
         {            
-            NodeL<Course> temp = head;
+            NodeS<Course> temp = head;
             if (temp == null)
             {
                 Console.WriteLine("Listenizde eleman yoktur.");
@@ -249,7 +249,7 @@ namespace CourseManagement.LinkedList
         }
         public void findCoursByName(string index)
         {
-            NodeL<Course> temp = head;
+            NodeS<Course> temp = head;
             if (temp == null)
             {
                 Console.WriteLine("Listenizde eleman yoktur.");
