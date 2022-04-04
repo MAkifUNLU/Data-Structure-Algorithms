@@ -17,17 +17,17 @@ namespace CourseManagement
         }
     }
     //           ÇİFT YÖNLÜ(DOUBLY) LİSTELER İÇİN NODE
-    class NodeD<T>
-    {
-        public NodeD<T> next;
-        public NodeD<T> prev;
-        public T _data;
+    //class NodeD<T>
+    //{
+    //    public NodeD<T> next;
+    //    public NodeD<T> prev;
+    //    public T _data;
 
-        public NodeD(T data)
-        {
-            _data = data;
-            next = null;
-        }
-    }
+    //    public NodeD(T data)
+    //    {
+    //        _data = data;
+    //        next = null;
+    //    }
+    //}
 
 }
