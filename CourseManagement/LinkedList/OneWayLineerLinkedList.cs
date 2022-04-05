@@ -9,7 +9,7 @@ namespace CourseManagement.LinkedList
         public NodeS<Course> head;
         public NodeS<Course> tail;
         public int count = 0;
-
+    
         public void addFront(NodeS<Course> node)
         {
             NodeS<Course> temp = head;
@@ -22,7 +22,7 @@ namespace CourseManagement.LinkedList
                 tail = head;
             }
         }
- 
+
         public void addFront(Course course)
         {
             addFront(new NodeS<Course>(course));
