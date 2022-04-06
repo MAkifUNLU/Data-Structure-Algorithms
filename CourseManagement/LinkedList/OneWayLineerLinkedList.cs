@@ -9,7 +9,24 @@ namespace CourseManagement.LinkedList
         public NodeS<Course> head;
         public NodeS<Course> tail;
         public int count = 0;
-    
+
+        public void addBack(NodeS<Course> node)
+        {
+            if (count == 0)
+            {
+                head = node;
+            }
+            else
+            {
+                tail.next = node;
+            }
+            tail = node;
+            count++;         
+        }
+        public void addBack(Course course)
+        {
+            addBack(new NodeS<Course>(course));
+        }
         public void addFront(NodeS<Course> node)
         {
             NodeS<Course> temp = head;
@@ -27,54 +44,33 @@ namespace CourseManagement.LinkedList
         {
             addFront(new NodeS<Course>(course));
         }
-
-        //public void insert(Course node, int x)
-        //{
-        //    //if (Count>=2)
-        //    //{
-        //    //    if (x<=Count)
-        //    //    {
-        //    //        for (int i = 0; i < x; i++)
-        //    //        {
-        //    //            head = head.next;
-        //    //        }
-
-        //    //    }
-
-        //    //}
-        //    if (node == null)
-        //    {
-        //        Console.WriteLine("Hata");
-        //        return;
-        //    }
-        //    Node<Course> noder = new Node<Course>(x);
-        //    //Node<Course> temp = head;
-        //    noder.next = node.next;
-        //    node.next = noder;
-
-        //}
-        //public void insert(Course course, int x)
-        //{
-        //    insert(new Node<Course>(course), x);
-        //}
-        public void addBack(NodeS<Course> node)
+        public bool insertAfter(int position, Course course)
         {
-            if (count == 0)
+
+            NodeS<Course> temp = head;
+            NodeS<Course> next;
+            for (int i = 0; i < position - 1; i++)
+            {
+                temp = temp.next;
+            }
+
+            var node = new NodeS<Course>(course);
+            if (temp == head)
             {
                 head = node;
             }
-            else
+            if (temp == tail)
             {
-                tail.next = node;
+                tail = node;
             }
-            tail = node;
-            count++;
-        }
-        public void addBack(Course course)
-        {
-            addBack(new NodeS<Course>(course));
-        }
 
+            next = temp.next;
+            temp.next = node;
+            node.next = next;
+
+            count++;
+            return true;
+        }
         public void removeFirst()
         {
             if (count != 0 )
@@ -117,17 +113,12 @@ namespace CourseManagement.LinkedList
         public void removeById(int index)
         {
             NodeS<Course> temp = head;
-            int count = 0;
             if (temp._data.code == index)
             {
-                head = temp.next;
-                Console.WriteLine("Removed: Found at [0] index");
+                removeFirst();
+                return;
             }
-            //else if (temp.next == null)
-            //{
-            //    removeLast();
-            //    return;
-            //}
+
             else
             {
                 while (temp.next != null)
@@ -136,100 +127,12 @@ namespace CourseManagement.LinkedList
                     if (temp.next._data.code == index)
                     {
                         temp.next = temp.next.next;
-                        Console.WriteLine("Removed: Found at [" + count + "] index");
                     }
                     temp = temp.next;                    
                 }
-            }
-
-            //Node<Course> temp = head, prev = null;
-
-            //if (temp != null && temp._data.code == index)
-            //{
-            //    head = temp.next;
-            //    return;
-            //}
-
-            //while (temp != null && temp._data.code != index)
-            //{
-            //    prev = temp;
-            //    temp = temp.next;
-            //}
-
-            //if (temp == null)
-            //    return;
-            //prev.next = temp.next;
-            ////if (true)
-            ////{
-            ////    Node<Course> current = head;
-            ////    //Node<Course> prev = null;
-            ////    while (current != null)
-            ////    {
-            ////        //prev = current;
-            ////        if (current._data.code.Equals(index))
-            ////        {
-
-            ////            current = current.next;
-            ////            Count--;
-            ////            break;
-            ////        }
-            ////        current = current.next;
-            ////    }
-            ////}
-            //if (Count!=0)
-            //{
-            //    Node<Course> newNode = head;
-            //    while (newNode != null)
-            //    {
-            //        if (newNode._data.code == index)
-            //        {
-            //            if (newNode == head)
-            //            {
-            //                Console.WriteLine(index + " silindi");                      
-            //                removeFirst();
-            //                return;
-            //            }
-            //            else if (newNode == tail)
-            //            {
-            //                Console.WriteLine(index + " silindi");
-            //                removeLast();
-            //                return;
-            //            }
-            //            else
-            //            {
-            //                while (newNode!=null)
-            //                {
-            //                    if (newNode._data.code.Equals(index))
-            //                    {
-            //                        newNode = newNode.next;
-            //                        Count--;
-            //                        break;
-            //                    }
-            //                    newNode.next = newNode.next.next;
-            //                }
-
-            //            }
-            //            Count--;
-            //            return;
-            //        }
-            //        newNode = newNode.next;
-            //    }
-            //}
+            }           
         }
-        public void listElements()
-        {
-            NodeS<Course> temp = head;
-            if (head == null)
-            {
-                Console.WriteLine("Listenizde eleman yoktur.");
-                return;
-            }
-            while (temp != null)
-            {
-                temp._data.printCours();
-                temp = temp.next;
-            }
-        }
+
         public void findCourseById(int index)
         {            
             NodeS<Course> temp = head;
@@ -261,6 +164,20 @@ namespace CourseManagement.LinkedList
                     Console.WriteLine("Aradığınız isimli ders bulundu");
                     temp._data.printCours();
                 }
+                temp = temp.next;
+            }
+        }
+        public void listElements()
+        {
+            NodeS<Course> temp = head;
+            if (head == null)
+            {
+                Console.WriteLine("Listenizde eleman yoktur.");
+                return;
+            }
+            while (temp != null)
+            {
+                temp._data.printCours();
                 temp = temp.next;
             }
         }
