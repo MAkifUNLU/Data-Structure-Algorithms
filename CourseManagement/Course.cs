@@ -7,7 +7,6 @@ namespace CourseManagement
     class Course
     {
         private static int codeId;
-
         public string courseName { get; set; }
         public int code { get; set; }
         public int kredi { get; set; }
